@@ -78,16 +78,15 @@
               <i class="fa fa-shopping-bag" aria-hidden="true"><span id="countcard">0</span> </i>
             </a>
             
-            <form class="form-inline ">
-              <button class="btn nav_search-btn" type="submit">
-                <i class="fa fa-search" aria-hidden="true"></i>
-              </button>
-              <label for="recherche">Rechercher des produits:</label>
-              <input type="text" id="recherche" oninput="rechercherProduits()">
-              
-             
-            </form>
-          </div>
+          
+            <form class="form-inline">
+                <button class="btn nav_search-btn" type="submit">
+                    <i class="fa fa-search" aria-hidden="true"></i>
+                </button>
+                <label for="recherche">Rechercher des produits :</label>
+                <input type="text" id="recherche" oninput="rechercherProduits()">
+            </form> 
+           
         </div>
       </nav>
     </header>
@@ -204,19 +203,24 @@
           Latest Products
         </h2>
       </div>
-      <div class="row">
-        <div class="col-lg-8 mx-auto d-flex justify-content-around my-2 sortBtn flex-wrap">
-            <a href="#" class="btn btn-outline-secondary btn-black text-uppercase filter-btn m-2" data-filter="all">all</a>
-            <a href="#" class="btn btn-outline-secondary btn-black text-uppercase filter-btn m-2" data-filter="bijoux">bijoux</a>
-            <a href="#" class="btn btn-outline-secondary btn-black text-uppercase filter-btn m-2" data-filter="poupee">poupee</a>
-            <a href="#" class="btn btn-outline-secondary btn-black text-uppercase filter-btn m-2" data-filter="fleurs">fleurs</a>
-            <a href="#" class="btn btn-outline-secondary btn-black text-uppercase filter-btn m-2" data-filter="montres">montres</a>
-
-        </div>
-      </div>
-      <div class="row" id="store-items">
-        <div class="col-sm-6 col-md-4 col-lg-3" data-item="montres">
-          <div class="box">
+      <!-- <div class="row" id="list">
+        <a href="#" class="btn btn-outline-secondary btn-black text-uppercase filter-btn m-2" value="default">Tout</a>
+        <a href="#" class="btn btn-outline-secondary btn-black text-uppercase filter-btn m-2" value="0">Ring</a>
+        <a href="#" class="btn btn-outline-secondary btn-black text-uppercase filter-btn m-2" value="1">Watch</a>
+        <a href="#" class="btn btn-outline-secondary btn-black text-uppercase filter-btn m-2" value="2">Teddy Bear</a>
+        <a href="#" class="btn btn-outline-secondary btn-black text-uppercase filter-btn m-2" value="3">Flower Bouquet</a>
+      </div> -->
+      <select id="list">
+        <option value="default">Sélectionnez une categorie de produits</option>
+        <option value="0">flower</option>
+        <option value="1">watch</option>
+        <option value="2">bear</option>
+        <option value="3">ring</option>
+        </select>
+     
+      <div class="row" id="store-items"  >
+        <div class="products col-sm-6 col-md-4 col-lg-3 ring" >
+          <div class="box"  >
             <a href="">
               <div class="img-box">
                 <img src="images/p1.png" alt="">
@@ -241,7 +245,7 @@
             <button onclick="Add()" id="btn">Add to card</button>
           </div>
         </div>
-        <div class="col-sm-6 col-md-4 col-lg-3"  data-item="montres">
+        <div class="products col-sm-6 col-md-4 col-lg-3 watch">
           <div class="box">
             <a href="">
               <div class="img-box">
@@ -268,7 +272,7 @@
             <button onclick="Add()" id="btn">Add to card</button>
           </div>
         </div>
-        <div class="col-sm-6 col-md-4 col-lg-3"  data-item="poupee">
+        <div class="products col-sm-6 col-md-4 col-lg-3 bear">
           <div class="box">
             <a href="">
               <div class="img-box">
@@ -295,7 +299,7 @@
             <button onclick="Add()" id="btn">Add to card</button>
           </div>
         </div>
-        <div class="col-sm-6 col-md-4 col-lg-3"  data-item="fleurs">
+        <div class="products col-sm-6 col-md-4 col-lg-3 flower">
           <div class="box">
             <a href="">
               <div class="img-box">
@@ -322,8 +326,8 @@
             <button onclick="Add()" id="btn">Add to card</button>
           </div>
         </div>
-        <div class="col-sm-6 col-md-4 col-lg-3"  data-item="poupee">
-          <div class="box">
+        <!-- <div class="col-sm-6 col-md-4 col-lg-3" >
+          <div class="box"  data-item="bear">
             <a href="">
               <div class="img-box">
                 <img src="images/p5.png" alt="">
@@ -348,8 +352,8 @@
             <button onclick="Add()" id="btn">Add to card</button>
           </div>
         </div>
-        <div class="col-sm-6 col-md-4 col-lg-3"  data-item="fleurs">
-          <div class="box">
+        <div class="col-sm-6 col-md-4 col-lg-3" >
+          <div class="box"  data-item="flower">
             <a href="">
               <div class="img-box">
                 <img src="images/p6.png" alt="">
@@ -375,8 +379,8 @@
             <button onclick="Add()" id="btn">Add to card</button>
           </div>
         </div>
-        <div class="col-sm-6 col-md-4 col-lg-3"  data-item="montres">
-          <div class="box">
+        <div class="col-sm-6 col-md-4 col-lg-3"  >
+          <div class="box" data-item="watch">
             <a href="">
               <div class="img-box">
                 <img src="images/p7.png" alt="">
@@ -401,8 +405,8 @@
             <button onclick="Add()" id="btn">Add to card</button>
           </div>
         </div>
-        <div class="col-sm-6 col-md-4 col-lg-3"  data-item="bijoux">
-          <div class="box">
+        <div class="col-sm-6 col-md-4 col-lg-3"  >
+          <div class="box" data-item="ring">
             <a href="">
               <div class="img-box">
                 <img src="images/p8.png" alt="">
@@ -434,6 +438,16 @@
         </a>
       </div>
     </div>
+    <div id="cart">
+        <h2>Shopping Cart</h2>
+        <ul id="cart-items">
+            Les éléments du panier seront ajoutés ici -->
+        <!-- </ul>
+        <div id="cart-total">
+            <p>Total: $<span id="total-amount">0.00</span></p>
+        </div>
+        <button onclick="checkout()">Checkout</button>
+    </div> -->
   </section>
 
   <!-- end shop section -->
@@ -997,6 +1011,7 @@
   <script src="js/custom.js"></script>
   <script src="js/addToCard.js"></script>
   <script src="js/my.js"></script>
+  <script src="chemin/vers/cart.js"></script>
 </body>
 
 </html>

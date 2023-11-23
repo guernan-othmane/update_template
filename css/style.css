@@ -862,9 +862,16 @@ a:focus {
 margin-right: 4rem;
 }
 #countcard{
-  color: red;
+ color: red;
+ font-size: 1rem;
 }
-
+.hidden {
+  display: none;
+}
+#list{
+  text-align: center;
+  margin-left: 25rem;
+}
 
 /* end footer section*/
 /*# sourceMappingURL=style.css.map */
